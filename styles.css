@@ -15,8 +15,8 @@ body{
   background-color:white;
 }
 #container{
-  width: 1650px;
-  height: 850px;
+  width: 100%;
+  height: 100%;
   background-color: white;
   position: fixed;
 }
@@ -27,7 +27,7 @@ body{
   float: left;
   clear: right;
   width: 25%;
-  height: 75px;
+  height: 7.5%;
   line-height: 50px;
   margin-right: 10px;
   margin-bottom: 10px;
@@ -37,7 +37,7 @@ body{
 #score{
   float: right;
   width: 15%;
-  height: 75px;
+  height: 7.5%;
   line-height: 50px;
   margin-left: 10px;
   margin-bottom: 10px;
@@ -47,22 +47,22 @@ body{
 #game-container{
   float: left;
   width: 100%;
-  height: 600px;
+  height: 70%;
   background-color:white;
   border: 2px solid black;
 }
 #game{
   margin: auto;
-  width: 500px;
-  height: 500px;
+  width: 35%;
+  height: 85%;
   line-height: 500px;
   background-color:red;
-  display: none;
+  //display: none;
 }
 #timer{
   float: left;
   width: 12%;
-  height: 50px;
+  height: 5%;
   line-height: 15px;
   background-color:white;
 }
@@ -70,20 +70,27 @@ body{
   float: right;
   padding: 15px 20px;
   width: 85%;
-  height: 20px;
+  height: 5%;
   background-color:white;
 }
 #fuse{
   float: left;
   width: 100%;
-  height: 20px;
+  height: 60%;
   background-color:black;
+}
+.buttons{
+  border: none;
+  width: 24.2%;
+  height: 10%;
+  margin: 5px;
+  float: left;
+  clear: right;
 }
 button {
   border: none;
-  width: 402.5px;
-  height: 100px;
-  margin: 5px;
+  width: 100%;
+  height: 100%;
   color: white;
   text-align: center;
   text-decoration: none;
@@ -101,17 +108,13 @@ button:active {
 }
 .red {
   background-color: #f44336;
-  float: right;
 }
 .yellow {
   background-color: #e6e600;
-  float: left;
 }
 .blue {
   background-color: #008CBA;
-  float: right;
 }
 .green {
   background-color: #4CAF50;
-  float: left;
 }
