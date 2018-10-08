@@ -2,6 +2,45 @@ var colorArray = ["green", "yellow", "red", "blue"];
 var colorList, score, clickedButton, playerSelections, lost, counter;
 var numClicks;
 
+
+function checkPlayerInput(){
+	console.log("clicked: "+playerSelections)
+	console.log("clicks: " + numClicks)
+	for (i = 0; i < colorList.length; i++){
+		if (colorList[i] != playerSelections[i]){
+			lost = true;
+		}
+	}
+	if (!lost){
+		score++;
+		// clearInterval(timer);
+		updateScore();
+		update();
+		for (var i = 0; i < 10; i++){
+			clearTimeout();
+		}
+	}
+	else{
+		alert("Game Over")
+		// clearInterval(timer);
+		playerSelections = [];
+		colorList = [];
+		$("#name").hide();
+		$("#game-container").hide();
+		$("#btns").hide();
+		// $("#timer").hide();
+		$("#start").html("Play Again")
+		$("#start").show();
+		$("#score").html("<p class='centered'> Final Score: " + score + "</p>")
+		for (var i = 0; i < 10; i++){
+			clearTimeout();
+		}
+	}
+}
+
+
+
+
 $(document).ready(function(){
 	$(".choice").click(function(){
 		clickedButton = $(this).text().toLowerCase();
@@ -107,40 +146,3 @@ function update(){
 function updateScore(){
 	$("#score").html("<p class='centered'> Score: " + score + "</p>")
 }
-
-function checkPlayerInput(){
-	console.log("clicked: "+playerSelections)
-	console.log("clicks: " + numClicks)
-	for (i = 0; i < colorList.length; i++){
-		if (colorList[i] != playerSelections[i]){
-			lost = true;
-		}
-	}
-	if (!lost){
-		score++;
-		// clearInterval(timer);
-		updateScore();
-		update();
-		for (var i = 0; i < 10; i++){
-			clearTimeout(check)
-		}
-	}
-	else{
-		alert("Game Over")
-		// clearInterval(timer);
-		playerSelections = [];
-		colorList = [];
-		$("#name").hide();
-		$("#game-container").hide();
-		$("#btns").hide();
-		// $("#timer").hide();
-		$("#start").html("Play Again")
-		$("#start").show();
-		$("#score").html("<p class='centered'> Final Score: " + score + "</p>")
-		for (var i = 0; i < 10; i++){
-			clearTimeout(check)
-		}
-	}
-}
-
-
