@@ -17,6 +17,10 @@ $(document).ready(function(){
 		$("#name").show();
 		$("#score").show();
 		$("#game-container").show();
+		score = 0;
+		lost = 0;
+		counter = 0;
+		updateScore();
 		// $("#timer").show();
 		startGame()
 	});
@@ -46,7 +50,7 @@ function showColors(){
 		counter++; 
 		setTimeout(function(){
 			$("#colorSwatch").hide(); 
-		}, 1000);
+		}, 300);
 		if (counter < colorList.length){
 			showColors();
 		}
@@ -57,9 +61,9 @@ function showColors(){
 				// 	timeRemaining--;
 				// 	updateTimer(timeRemaining);
 				// }, 1000);
-			}, 1000);
+			}, 300);
 		}
-	}, 1500);
+	}, 700);
 }
 
 function update(){
