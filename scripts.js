@@ -66,22 +66,6 @@ $(document).ready(function(){
 
 })
 
-
-$.fn.randomize = function(childElem) {
-  return this.each(function() {
-      var $this = $(this);
-      var elems = $this.children(childElem);
-
-      elems.sort(function() { return (Math.round(Math.random())-0.5); });  
-
-      $this.remove(childElem);  
-
-      for(var i=0; i < elems.length; i++)
-        $this.append(elems[i]);      
-
-  });    
-};
-
 function startGame(){
 	console.log("starting")
 	colorList = [];
@@ -100,7 +84,6 @@ function draw(index){
 }
 
 function showColors(){
-	
 	setTimeout(function(){
 		draw(counter); 
 		counter++; 
@@ -112,7 +95,6 @@ function showColors(){
 		}
 		else {
 			setTimeout(function(){
-				$("#btns").randomize(".buttons");
 				$("#btns").show();
 				// timer = setInterval(function(){
 				// 	timeRemaining--;
